@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergman Vaca Pereira Hurtado | CLO & Fintech Strategist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@200;300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --brand-blue: #0A1128;
+            --brand-silver: #C0C0C0;
+            --off-white: #F8FAFC;
+            --metal-gradient: linear-gradient(135deg, #7D7D7D 0%, #C0C0C0 50%, #F5F5F5 100%);
+            --transition: 0.5s cubic-bezier(0.8, 0, 0.2, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--off-white);
+            color: var(--brand-blue);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* BACKGROUND KINETIC TUNNEL */
+        .kinetic-tunnel {
+            position: fixed;
+            top: 50%; left: 50%; width: 300vmax; height: 300vmax;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            background: repeating-conic-gradient(
+                from 0deg,
+                transparent 0deg 0.3deg,
+                rgba(10, 17, 40, 0.05) 0.3deg 0.6deg
+            );
+            animation: rotateTunnel 400s linear infinite;
+        }
+
+        @keyframes rotateTunnel { 
+            from { transform: translate(-50%, -50%) rotate(0deg); } 
+            to { transform: translate(-50%, -50%) rotate(360deg); } 
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* HEADER SECTION */
+        header {
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 220px; 
+            gap: 50px;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 44px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.95;
+            color: var(--brand-blue);
+        }
+
+        .sub-heading {
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--brand-silver);
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border: 10px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        /* GRID SYSTEM */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 0;
+        }
+
+        aside {
+            padding: 60px;
+            background: var(--brand-blue);
+            color: white;
+        }
+
+        main {
+            padding: 60px;
+            background: white;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 17px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        main h2 {
+            color: var(--brand-blue);
+            border-bottom: 2px solid var(--brand-blue);
+            width: fit-content;
+            margin-bottom: 40px;
+        }
+
+        /* PRIORITY TILES */
+        .priority-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .tile-high {
+            background: var(--off-white);
+            padding: 30px;
+            border-left: 5px solid var(--brand-blue);
+            transition: var(--transition);
+        }
+
+        .tile-high:hover {
+            transform: translateX(10px);
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .tile-high h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            letter-spacing: 2px;
+            color: var(--brand-blue);
+            margin-bottom: 10px;
+        }
+
+        .tile-high p {
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .skill-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin: 0 5px 10px 0;
+        }
+
+        /* EXPERIENCE TIMELINE */
+        .exp-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .exp-role {
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--brand-blue);
+        }
+
+        .exp-date {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--brand-silver);
+            text-transform: uppercase;
+        }
+
+        .exp-company {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .exp-desc {
+            font-size: 13.5px;
+            color: #64748b;
+            text-align: justify;
+        }
+
+        /* CONTACT PILLS */
+        .contact-pills {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .pill {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .pill:hover {
+            color: var(--brand-silver);
+            transform: translateX(10px);
+        }
+
+        .pill i {
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .footer-cta {
+            background: var(--brand-blue);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .btn-call {
+            display: inline-block;
+            background: white;
+            color: var(--brand-blue);
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 12px;
+            border-radius: 4px;
+            transition: var(--transition);
+            margin-top: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-call:hover {
+            background: var(--brand-silver);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 900px) {
+            header { grid-template-columns: 1fr; text-align: center; padding: 40px 20px; }
+            .profile-img { margin: 20px auto 0; width: 180px; height: 180px; }
+            .content-grid { grid-template-columns: 1fr; }
+            aside { order: 2; padding: 40px 20px; }
+            main { order: 1; padding: 40px 20px; }
+            h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kinetic-tunnel"></div>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div>
+                <h1>Bergman <br><span>Vaca Pereira H.</span></h1>
+                <div class="sub-heading">
+                    CLO - CHIEF LEGAL OFFICER, FINTECH STRATEGIST & BUSINESS DEVELOPER
+                </div>
+            </div>
+            <img src="1000437467.jpg" alt="Bergman Vaca Pereira" class="profile-img">
+        </header>
+
+        <!-- CONTENT -->
+        <div class="content-grid">
+            <!-- SIDEBAR -->
+            <aside>
+                <h2>Competencias</h2>
+                <div class="skill-tag">Cumplimiento ASFI</div>
+                <div class="skill-tag">Adecuación ETF</div>
+                <div class="skill-tag">Legal Architecture</div>
+                <div class="skill-tag">Gobernanza APP</div>
+                <div class="skill-tag">Crypto Law</div>
+                <div class="skill-tag">Corporate Compliance</div>
+                <div class="skill-tag">Blockchain Strategy</div>
+
+                <h2 style="margin-top: 40px;">Idiomas</h2>
+                <div class="skill-tag">Inglés - C1 Advanced</div>
+                <div class="skill-tag">Español - Nativo</div>
+
+                <h2 style="margin-top: 40px;">Educación</h2>
+                <div style="font-size: 13px; margin-bottom: 20px;">
+                    <strong>Maestría en Finanzas & Criptoactivos</strong><br>
+                    EUDE Business School (España)
+                </div>
+                <div style="font-size: 13px;">
+                    <strong>Licenciatura en Derecho</strong><br>
+                    UAGRM (Graduación por Excelencia)
+                </div>
+
+                <div class="contact-pills">
+                    <a href="https://wa.me/59179465701?text=Hola%20Bergman,%20he%20visto%20tu%20perfil%20profesional%20y%20me%20gustaría%20contactar%20contigo." class="pill"><i class="fa-brands fa-whatsapp"></i> +591 79465701</a>
+                    <a href="mailto:bergmanvph@gmail.com" class="pill"><i class="fa-regular fa-envelope"></i> bergmanvph@gmail.com</a>
+                    <a href="https://linkedin.com/in/bergmanvph" class="pill"><i class="fa-brands fa-linkedin-in"></i> linkedin.com/in/bergmanvph</a>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <main>
+                <h2>Pilares Estratégicos</h2>
+                
+                <div class="priority-grid">
+                    <div class="tile-high">
+                        <h3>Chief Legal Officer (CLO) - APP</h3>
+                        <p>Responsable de la arquitectura legal y regulatoria de una **Administradora de Pasarela de Pagos (APP)**. Gestión de cumplimiento normativo y diseño de marcos jurídicos corporativos.</p>
+                    </div>
+                    
+                    <div class="tile-high">
+                        <h3>Adecuación ante ASFI para ETF</h3>
+                        <p>Liderazgo técnico en procesos de adecuación normativa ante la ASFI para **Entidades de Tecnología Financiera (ETF)**. Especialista en marcos de gobernanza PSAV y prevención de riesgos.</p>
+                    </div>
+
+                    <div class="tile-high">
+                        <h3>Business Developer - BOLBIT LTDA</h3>
+                        <p>Identificación de oportunidades comerciales y estructuración de alianzas estratégicas en el sector de activos digitales e infraestructura tecnológica.</p>
+                    </div>
+                </div>
+
+                <h2>Trayectoria Consolidada</h2>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Abogado Asociado</span>
+                        <span class="exp-date">2024 - 2026</span>
+                    </div>
+                    <span class="exp-company">Moreno Baldivieso</span>
+                    <p class="exp-desc">
+                        Asesoramiento en protección de activos intangibles, propiedad intelectual y marcos regulatorios para corporaciones de base tecnológica.
+                    </p>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Asesor Legal In Situ</span>
+                        <span class="exp-date">2023</span>
+                    </div>
+                    <span class="exp-company">Proyecto Estatal Mutún</span>
+                    <p class="exp-desc">
+                        Gestión estratégica de relaciones laborales y seguridad ocupacional en entorno industrial de alta complejidad.
+                    </p>
+                </div>
+
+                <div style="margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    <p style="font-size: 13px; font-style: italic; color: #64748b;">
+                        "Mi enfoque integra la solidez del rigor jurídico tradicional con la agilidad de los nuevos ecosistemas digitales para habilitar soluciones legales disruptivas."
+                    </p>
+                </div>
+            </main>
+        </div>
+
+        <!-- FOOTER CTA -->
+        <div class="footer-cta">
+            <h3 style="font-family: 'Cinzel'; letter-spacing: 5px; font-size: 18px;">Habilitemos su Próximo Nivel</h3>
+            <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">Agenda una sesión estratégica para el cumplimiento y despliegue Fintech.</p>
+            <a href="https://wa.me/59179465701?text=Hola%20Bergman,%20vi%20tu%20perfil%20como%20CLO%20y%20especialista%20en%20ASFI.%20Me%20gustaría%20agendar%20una%20llamada." class="btn-call">Agendar Sesión</a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; opacity: 0.5;">
+        &copy; 2026 Bergman Vaca Pereira Hurtado | Legal Infrastructure for Digital Assets
+    </footer>
+
+</body>
+</html>
